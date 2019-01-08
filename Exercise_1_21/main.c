@@ -8,7 +8,7 @@ Exercise 1-21: Write a program entab that replaces strings of blanks by the mini
 Use the same tab stops as for detab.  When either a tab or a single blank would suffice to reach a tab stop, which should be give preference?
 */
 
-int column;  //keeps track of the the column number
+int column; //keeps track of the the column number
 int c;		//character value
 
 int getlinex(char line[], int maxLine);
