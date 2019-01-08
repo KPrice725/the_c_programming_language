@@ -9,7 +9,7 @@ Use the same tab stops as for detab.  When either a tab or a single blank would 
 */
 
 int column; //keeps track of the the column number
-int c;		//character value
+int c;      //character value
 
 int getlinex(char line[], int maxLine);
 int entab(char line[], int index);
