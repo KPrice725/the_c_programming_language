@@ -5,7 +5,7 @@ Exercise 1-24: Write a program to check a C program for rudimentary syntax error
 Don't forget about quotes, both single and double, escape sequences, and comments.
 */
 
-int parenthesesCount, bracketsCount, bracesCount, lineCount, lastOpenParen, lastOpenBracket, lastOpenBrace, totalErrorCount;
+int parenthesesCount, bracketsCount, bracesCount, lineCount, totalErrorCount;
 
 void checkProgram();				/* receive and process user input text */
 void checkDoubleQuotes();			/* check to see if double quote is handled properly */
@@ -18,7 +18,7 @@ int main() {
 
 	extern int parenthesesCount, bracketsCount, bracesCount, lineCount, totalErrorCount;
 
-	parenthesesCount = bracketsCount = bracesCount = lastOpenParen = lastOpenBracket = lastOpenBrace = totalErrorCount = 0;
+	parenthesesCount = bracketsCount = bracesCount = totalErrorCount = 0;
 
 	lineCount = 1;
 
@@ -130,21 +130,18 @@ void skipSinglelineComment() {
 }
 
 void checkBracket(int c) {
-	extern int parenthesesCount, bracketsCount, bracesCount, lineCount, lastOpenParen, lastOpenBracket, lastOpenBrace;
+	extern int parenthesesCount, bracketsCount, bracesCount, lineCount;
 
 	if (c == '(') {
 		++parenthesesCount;
-		lastOpenParen = lineCount;
 	} else if (c == ')') {
 		--parenthesesCount;
 	} else if (c == '[') {
 		++bracketsCount;
-		lastOpenBracket = lineCount;
 	} else if (c == ']') {
 		--bracketsCount;
 	} else if (c == '{') {
 		++bracesCount;
-		lastOpenBrace = lineCount;
 	} else if (c == '}') {
 		--bracesCount;
 	}
