@@ -12,3 +12,5 @@ Exercise 1-23: Write a program to remove all comments from a C program. Don't fo
 Exercise 1-24: Write a program to check a C program for rudimentary syntax errors, like unbalanced parentheses, brackets and braces. Don't forget about quotes, both single and double, escape sequences, and comments.
 
 Exercise 2-1: Write a program to determine the ranges of char, short, int, and long variables, both signed and unsigned, by printing appropriate values from standard headers and by direct computation. Harder if you compute them: determine the ranges of the various floating-point types.
+
+Exercise 2-2: Write a loop equivalent to the for loop above without using && or ||
