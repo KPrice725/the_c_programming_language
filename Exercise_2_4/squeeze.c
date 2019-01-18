@@ -8,15 +8,6 @@ Exercise 2-4: Write an alternate version of squeeze(s1, s2) that deletes each ch
 */
 void squeeze(char s1[], const char s2[]);
 
-int main() {
-
-	char s1[] = "My name is Kevin!";
-	char s2[] = "Msvn";
-	squeeze(s1, s2); 			/* Should result in "y ame i Kei!" */
-//	printf("%s\n", s1);
-	return 0;
-}
-
 /*
 squeeze: create a characters array with each value initialized to FALSE,
 then iterate through s2 string, setting the value of the characters array at the s2 char's index value to TRUE.
