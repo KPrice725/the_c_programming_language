@@ -22,6 +22,6 @@ unsigned setbits(unsigned int x, int p, int n, unsigned int y) {
     */
     modY = (y & ~(~0 << n)) << (p + 1 - n);
 
-    /* Use | to set turn on bits in x range to match the bits in y range */
+    /* Use | to turn on bits in x range to match the bits in y range */
     return modX | modY;
 }
