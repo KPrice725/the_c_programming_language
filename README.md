@@ -30,3 +30,5 @@ Exercise 2-8: Write a function rightrot(x, n) that returns the value of the inte
 Exercise 2-9: In a two's complement number system, x &= (x-1) deletes the rightmost 1-bit in x.  Explain why.  Use this observation to write a faster version of bitcount.
 
 Exercise 2-10: Rewrite the function lower, which converts upper case letters to lower case, with a conditional expression instead of if-else.
+
+Exercise 3-1: Our binary search makes two tests inside the loop, when one would suffice (at the price of more tests outside). Write a version with only one test inside the loop and measure the difference in run-time.
