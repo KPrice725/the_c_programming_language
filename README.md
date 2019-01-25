@@ -32,3 +32,5 @@ Exercise 2-9: In a two's complement number system, x &= (x-1) deletes the rightm
 Exercise 2-10: Rewrite the function lower, which converts upper case letters to lower case, with a conditional expression instead of if-else.
 
 Exercise 3-1: Our binary search makes two tests inside the loop, when one would suffice (at the price of more tests outside). Write a version with only one test inside the loop and measure the difference in run-time.
+
+Exercise 3-2: Write a function escape(s, t) that converts characters like newline and tab into visible escape sequences like \n and \t as it copies the string t to s.  Use a switch.  Write a function for the other direction as well, converting escape sequences into the real characters.
