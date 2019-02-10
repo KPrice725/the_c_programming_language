@@ -4,6 +4,11 @@
 #define OCTAL	8
 #define BINARY  1
 
+/*
+Exercise 3-5: Write the function itob(n,s,b) that converts the integer n into a base b character representation 
+in the string s.  In particuar, itob(n,s,16) formats n as a hesadecimal integer in s.
+*/
+
 void itob(int number, char output[], char base);
 void itoa_decimal(int n, char s[]);
 void itoa_octal(int n, char s[]);
