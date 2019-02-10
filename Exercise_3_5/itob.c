@@ -2,33 +2,36 @@
 #define DECIMAL 10
 #define HEX		16
 #define OCTAL	8
+#define BINARY  1
 
 void itob(int number, char output[], char base);
 void itoa_decimal(int n, char s[]);
 void itoa_octal(int n, char s[]);
 void itoa_hex(int n, char s[]);
+void itoa_binary(int n, char s[]);
 void reverse(char s[]);
 
+//1111 1111 1111 1111 1111 1111 1111 0000
 int main(void) {
 
 	char result[sizeof(int) * 8 + 1];
-	int input1 = 0x9D02AAB4;
-	int input2 = 0xF2A76A;
-	int input3 = 0x992718AB;
+	int input1 = 12312555;
+	int input2  = -12312555;
+	int input3 = -10;
 
 //	itob(input, result, DECIMAL);
 //
 //	printf("%s\n", result);
 
-	itob(input1, result, HEX);
+	itob(input1, result, OCTAL);
 
 	printf("%s\n", result);
 
-	itob(input2, result, HEX);
+	itob(input2, result, OCTAL);
 
 	printf("%s\n", result);
 
-	itob(input3, result, HEX);
+	itob(input3, result, OCTAL);
 
 	printf("%s\n", result);
 
@@ -39,12 +42,12 @@ void itob(int number, char output[], char base) {
 
 	switch (base) {
 
-	case 1:
-
+	case BINARY:
+        itoa_binary(number, output);
 		break;
 
 	case OCTAL:
-
+        itoa_octal(number, output);
 		break;
 
 	case DECIMAL:
@@ -76,7 +79,23 @@ void itoa_decimal(int n, char s[]) {
 
 void itoa_octal(int n, char s[]) {
 	int i = 0;
+	int targetValue;
 	int sign = (n < 0) ? -1 : 1;
+    if (sign == 1) {
+        targetValue = 07;
+    } else {
+        targetValue = -4000000000;
+    }
+
+    do {
+        s[i++] = sign * (n % 8) + '0';
+    } while ((n /= 10) != 0);
+
+	if (sign == -1) {
+		s[i++] = '-';
+	}
+	s[i] = '\0';
+	reverse(s);
 }
 
 void itoa_hex(int n, char s[]) {
@@ -159,6 +178,36 @@ void itoa_hex(int n, char s[]) {
 
 }
 
+void itoa_binary(int n, char s[]) {
+    int i, bit, targetBit;
+  	int sign = (n < 0) ? -1 : 1;
+
+  	if (sign == 1) {
+        targetBit = 0x1;
+  	} else {
+        targetBit = 0x80000000;
+  	}
+
+    for (i = bit = 0; i < 32; i++) {
+        if (n & targetBit) {
+            s[i] = '1';
+        } else {
+            s[i] = '0';
+        }
+        if (sign == 1) {
+            n >>= 1;
+        } else {
+            n <<= 1;
+        }
+    }
+
+    s[i] = '\0';
+    if (sign == 1) {
+        reverse(s);
+    }
+
+}
+
 void reverse(char s[]) {
 	int c, i, j;
 
@@ -167,5 +216,4 @@ void reverse(char s[]) {
 		s[i] = s[j];
 		s[j] = c;
 	}
-
 }
