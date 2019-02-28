@@ -42,3 +42,5 @@ Exercise 3-4: In a two's complement number representation, our version of itoa d
 Exercise 3-5: Write the function itob(n,s,b) that converts the integer n into a base b character representation in the string s.  In particuar, itob(n,s,16) formats n as a hesadecimal integer in s.
 
 Exercise 3-6: Write a version of itoa that accepts three arguments instead of two.  The third argument is a minimum field width; the converted number must be padded with blanks on the left if necessary to make it wide enough.
+
+Exercise 4-1: Write the function strrindex(s, t), which returns the position of the rightmost occurrence of t in s, or -1 if there is none.
